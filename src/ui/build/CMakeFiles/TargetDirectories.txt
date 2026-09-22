@@ -1,0 +1,5 @@
+/home/chich/pro/c/crypto/src/ui/build/CMakeFiles/ui.dir
+/home/chich/pro/c/crypto/src/ui/build/CMakeFiles/edit_cache.dir
+/home/chich/pro/c/crypto/src/ui/build/CMakeFiles/rebuild_cache.dir
+/home/chich/pro/c/crypto/src/ui/build/CMakeFiles/ui_autogen_timestamp_deps.dir
+/home/chich/pro/c/crypto/src/ui/build/CMakeFiles/ui_autogen.dir
