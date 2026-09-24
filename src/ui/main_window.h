@@ -2,6 +2,8 @@
 #define MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <array>
+#include <sodium.h>
 
 class QPlainTextEdit;
 class QPushButton;
@@ -16,6 +18,7 @@ private slots:
   void encryptText();
 
 private:
+  std::array<unsigned char, crypto_aead_chacha20poly1305_ietf_KEYBYTES> key;
   QPlainTextEdit *inputText;
   QPlainTextEdit *outputText;
   QPushButton *encryptButton;

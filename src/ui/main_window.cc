@@ -8,6 +8,7 @@
 #include <QWidget>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
+  randombytes_buf(key.data(), key.size());
   setWindowTitle("Шифратор");
   resize(600, 500);
 
@@ -39,9 +40,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 void MainWindow::encryptText() {
   QString text = inputText->toPlainText();
 
-  std::string encrypted_ = encrypt(text.toStdString());
-  std::string encrypted = encrypt(encrypted_);
+  std::string plaintext = text.toStdString();
 
-  outputText->setPlainText(
-      QString::fromLatin1(encrypted.data(), encrypted.size()));
+  // MainWindow obj;
+  encrypted_data encrypted = encrypt(plaintext, key);
+
+  std::string encoded = encode(encrypted.nonce + encrypted.cipher_text);
+
+  outputText->setPlainText(QString::fromLatin1(encoded));
 }
